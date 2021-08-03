@@ -11,6 +11,11 @@ html{
     font-size: 62.5%;
 }
 
+body{
+    font-family: "Poppins", san-serif;
+}
+
+
 h1{
     font-size: 2.6rem;
 
@@ -24,6 +29,9 @@ h2{
 }
 h3{
     font-size: 3rem;
+    font-weight: normal;
+    
+    ;
 }
 
 h4, h5{
@@ -41,11 +49,15 @@ button{
     color: white;
     font-size: 1.8rem;
     cursor: pointer;
+    transition: background 0.5s ease-in-out;
+    
 }
 
-body{
-    font-family: "Trirong", serif;
+button:hover{
+    background: #27394e;
+    
 }
+
 
 
 /* header styles */
@@ -56,12 +68,13 @@ body{
     
 }
 nav{
+    display: flex;
     min-height: 10vh;
     padding: 2rem;
-    display: flex;
     width: 90%;
     margin: auto;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav ul{
@@ -75,12 +88,14 @@ nav ul{
 
 #logo{
     flex: 2 1 40rem;
+    font-family: "Pattaya",sans-serif;
+    font-weight: 400;
 }
 
 
 .first-section{
     min-height: 90vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent),url(img/getty_512358000_239361.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent),url(img/wallpapersden.com_vintage-4k-scenic_wxl.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center ;
@@ -89,9 +104,97 @@ nav ul{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .first-section h3{
-    padding: 1rem;
+    padding: 5rem;
 }
 
+
+/* Second-section */
+#second-section{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url(img/new-york-page.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+
+
+}
+
+.second-header{
+    width: 90%;
+    margin: auto;
+}
+
+.second-header h2{
+    padding: 1rem 0rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5rem;
+}
+.second-header h3{
+    padding: 4rem 0rem;
+    
+    
+    
+}
+.cloud{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.moving-cloud-1{
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+    opacity: 0.8;
+}
+
+.moving-cloud-2{
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+    top: 20%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes cloudAnimation{
+
+    from{
+        transform: translate(10%, -10%);
+    }
+    to{
+        transform: translate(0%. 0%);
+    }
+}
+
+
+/* Media query*/
+@media screen and (max-width: 932px){
+    html{
+        font-size: 45%;
+    }
+    nav{
+        text-align: center;
+    }
+    #logo{
+        padding: 2rem;
+    }
+    .cloud{
+        height: 40rem;
+        pointer-events: none;
+    }
+    .moving-cloud-1{
+        z-index: -1;
+
+    }
+    .moving-cloud-2{
+        z-index: -2;
+    }
+    .second-header h3{
+        background: #131c27;
+        -webkit-text-fill-color: white;
+    }
+}
